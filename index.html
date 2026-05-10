@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подготовка к МЦКО: Кавказский пленник</title>
+<style>
+:root{--red:#9b0f14;--dark:#11143b;--blue:#eaf8fb;--line:#d8e4ea;--green:#178a49;--bad:#d93025;--shadow:0 18px 50px rgba(17,20,59,.14)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:var(--dark);background:radial-gradient(circle at 10% 8%,rgba(86,201,218,.36),transparent 28%),radial-gradient(circle at 92% 12%,rgba(155,15,20,.13),transparent 25%),linear-gradient(135deg,#fff,#eefbff);padding:22px}
+.app{max-width:1120px;margin:auto}.panel{background:rgba(255,255,255,.94);border:1px solid rgba(17,20,59,.08);border-radius:30px;box-shadow:var(--shadow);padding:28px;margin-top:22px;overflow:hidden}.panel:first-child{margin-top:0}
+.badge{display:inline-flex;background:#fff3f3;color:var(--red);border:1px solid #ffd2d2;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:800}
+h1{margin:18px 0 10px;font-size:clamp(29px,4.2vw,48px);line-height:1.08}h2{margin:0 0 14px;font-size:clamp(23px,3vw,32px)}p{font-size:18px;line-height:1.5}.lead{max-width:900px;color:#273052}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.mini{background:var(--blue);border:1px solid #cce6ec;border-radius:18px;padding:14px;font-size:16px;line-height:1.35}
+.modebox{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.mode{background:#f7fbfd;border:2px solid #dcebf0;border-radius:20px;padding:16px;cursor:pointer;transition:.18s}.mode:hover{transform:translateY(-2px);border-color:#54c6d9}.mode.active{border-color:var(--red);background:#fff6f6}.mode b{display:block;font-size:19px;margin-bottom:6px}.mode span{font-size:15px;color:#647084;line-height:1.35}
+button{border:0;cursor:pointer;border-radius:16px;padding:14px 22px;font-size:17px;font-weight:800;color:#fff;background:var(--red);box-shadow:0 10px 24px rgba(155,15,20,.24);transition:.18s}button:hover{transform:translateY(-1px)}.secondary{background:#243b6b}.light{background:var(--blue);color:var(--dark);border:1px solid #cce6ec;box-shadow:none}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.hidden{display:none!important}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}.progress-wrap{flex:1;min-width:230px;height:16px;background:#e6edf2;border-radius:999px;overflow:hidden}.progress{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#54c6d9,var(--red));transition:.28s}.stats{display:flex;gap:10px;flex-wrap:wrap;font-weight:800}.stat{background:#f6f9fb;border:1px solid #e0e9ee;border-radius:14px;padding:9px 12px}
+.card{background:#fff;border-radius:24px;border:1px solid #e8eef2;border-left:8px solid var(--red);padding:24px}.tag{display:inline-flex;margin-bottom:14px;background:#fff8df;border:1px solid #ffe39b;color:#735100;padding:7px 12px;border-radius:999px;font-size:14px;font-weight:800}.q{margin:0 0 18px;color:var(--red);font-size:clamp(21px,3vw,31px);line-height:1.28;font-weight:800}.fragment{background:#f7fbfd;border:1px solid #dcebf0;border-radius:20px;padding:18px;margin:14px 0 20px;line-height:1.6;font-size:17px;white-space:pre-line}.options{display:grid;gap:10px}.option{display:flex;gap:10px;padding:14px 16px;border:2px solid #dcebf0;border-radius:18px;background:#f9fcfd;cursor:pointer;font-size:17px;line-height:1.35}.option:hover{border-color:#54c6d9;background:#f0fbfd}.option input{margin-top:3px;transform:scale(1.2)}
+.tablewrap{overflow-x:auto;margin-top:16px}.mcko{width:100%;border-collapse:collapse;background:#fff;border:2px solid #111;font-size:18px}.mcko th{border:2px solid #111;background:#f2f7fb;color:#111;padding:12px;font-size:21px;text-align:center;font-weight:800}.mcko td{border:2px solid #111;padding:12px 14px;vertical-align:top;color:#111;line-height:1.35}.mcko .left{width:52%;font-weight:400}.mcko .right{width:48%;font-weight:400}
+.answergrid{margin-top:18px;background:var(--blue);border:1px solid #cce6ec;border-radius:18px;padding:16px}.answergrid-title{font-size:20px;font-weight:800;margin-bottom:12px}.letters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.letter{background:#fff;border:1px solid #dcebf0;border-radius:14px;padding:12px}.letter label{display:block;font-weight:800;margin-bottom:8px;color:var(--red)}
+select{width:100%;font-size:16px;padding:12px;border:2px solid #cbd9dd;border-radius:12px;background:#fff;color:var(--dark);outline:none}select:focus{border-color:#54c6d9}.feedback{margin-top:18px;padding:16px 18px;border-radius:18px;font-size:18px;font-weight:800;line-height:1.45}.ok{color:#0e5f35;background:#e8f8ef;border:1px solid #b7e7cc}.error{color:#8b1f16;background:#fff0ee;border:1px solid #ffc7c0}.hint{margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff8df;border:1px solid #ffe49a;font-size:17px;line-height:1.45}.small{margin-top:10px;color:#647084;font-size:15px}.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.key{background:#f7fafc;border:1px solid #e3ebf0;border-radius:16px;padding:14px 16px;line-height:1.45}.key b{color:var(--red)}
+strong{font-weight:900;color:#111}
+@media(max-width:860px){body{padding:14px}.panel{padding:20px;border-radius:24px}.grid,.modebox,.keys,.letters{grid-template-columns:1fr}.card{padding:18px}.mcko{font-size:16px}.mcko th{font-size:18px}}
+</style>
+</head>
+<body>
+<main class="app">
+<section class="panel">
+<span class="badge">📚 Подготовка к МЦКО • литература • 5 класс</span>
+<h1>Задания №3–6 по рассказу Л. Н. Толстого «Кавказский пленник»</h1>
+<p class="lead">Тренажёр создан по трём вариантам: значение слова по фрагменту, средства выразительности, соответствие «герой — событие», выбор двух верных утверждений.</p>
+<div class="grid"><div class="mini">№3 — значение слова по контексту.</div><div class="mini">№4 — средства художественной выразительности.</div><div class="mini">№5 — соответствие героев и событий.</div><div class="mini">№6 — два верных утверждения.</div></div>
+</section>
+
+<section id="start" class="panel">
+<h2>Выбери режим</h2><p>Можно пройти один вариант или все три варианта подряд.</p>
+<div class="modebox">
+<div class="mode active" onclick="setMode('v1',this)"><b>Вариант 1</b><span>4 задания: №3, №4, №5, №6.</span></div>
+<div class="mode" onclick="setMode('v2',this)"><b>Вариант 2</b><span>4 задания: №3, №4, №5, №6.</span></div>
+<div class="mode" onclick="setMode('v3',this)"><b>Вариант 3</b><span>4 задания: №3, №4, №5, №6.</span></div>
+</div>
+<div class="modebox">
+<div class="mode" onclick="setMode('all',this)"><b>Все варианты</b><span>12 заданий подряд.</span></div>
+<div class="mode" onclick="setMode('shuffle',this)"><b>Перемешать</b><span>12 заданий в случайном порядке.</span></div>
+<div class="mode" onclick="setMode('hard',this)"><b>Контрольный режим</b><span>12 заданий без подсказок до конца.</span></div>
+</div>
+<div class="actions"><button onclick="startGame()">Начать тренировку</button></div>
+<p class="small">В заданиях №4 и №5 сначала показывается таблица как в МЦКО. Жирным выделены ключевые слова из исходного документа.</p>
+</section>
+
+<section id="game" class="panel hidden">
+<div class="topbar"><div class="progress-wrap"><div id="progress" class="progress"></div></div><div class="stats"><div class="stat">Задание: <span id="num">1</span>/<span id="total">4</span></div><div class="stat">Баллы: <span id="score">0</span></div><div class="stat">Ошибки: <span id="mistakes">0</span></div></div></div>
+<div class="card">
+<span id="tag" class="tag"></span>
+<p id="question" class="q"></p>
+<div id="fragment" class="fragment hidden"></div>
+<div id="area"></div>
+<div class="actions"><button id="check" onclick="checkAnswer()">Проверить ответ</button><button id="next" class="secondary hidden" onclick="nextQuestion()">Следующее задание</button><button class="light" onclick="goStart()">Выбрать другой режим</button></div>
+<div id="feedback" class="feedback hidden"></div><div id="hint" class="hint hidden"></div>
+</div>
+</section>
+
+<section id="finish" class="panel hidden">
+<h2>Тренировка завершена!</h2><p id="result" class="lead"></p>
+<div class="actions"><button onclick="startGame()">Пройти ещё раз</button><button class="secondary" onclick="goStart()">Выбрать режим</button></div>
+</section>
+</main>
+
+<script>
+const variants={
+v1:[
+{variant:'Вариант 1',num:'№3',type:'single',title:'Прочитайте фрагмент рассказа Л. Н. Толстого «Кавказский пленник» и выполните задание.',fragment:`Стало смеркаться: переехали ещё речку, стали подниматься по каменной горе, запахло дымом, забрехали собаки. Приехали в аул. Послезли с лошадей татары, собрались ребята татарские, окружили Жилина, пищат, радуются, стали камнями пулять в него.
+
+Татарин отогнал ребят, снял Жилина с лошади и кликнул работника. Пришёл ногаец, скуластый, в одной рубахе. Рубаха оборванная, вся грудь голая. Приказал что-то ему татарин. Принёс работник колодку: два чурбака дубовых на железные кольца насажены, и в одном кольце пробойчик и замок.
+
+Развязали Жилину руки, надели колодку и повели в сарай; толкнули его туда и заперли дверь. Жилин упал на навоз. Полежал, ощупал в темноте, где помягче, и лёг.`,question:'Опираясь на текст, выберите из приведённого списка значение слова «аул».',options:['крепость, в которой служили русские офицеры','горное селение','помещение для пленников','дорога между горами'],answer:[2],hint:'Аул — это горное селение.'},
+{variant:'Вариант 1',num:'№4',type:'matching',title:'Установите соответствие между примерами из рассказа и названиями средств художественной выразительности.',left:['А) «туман <strong>как молоко</strong> белеется»','Б) «сапоги <strong>проклятые</strong>»','В) «снеговая <strong>гора</strong> выше других <strong>шапкой</strong> <strong>стоит</strong>»','Г) «<strong>месяц</strong> ещё скорее <strong>выбирается</strong>»'],right:['1) олицетворение','2) эпитет','3) метафора','4) сравнение'],answer:['4','2','3','1'],hint:'Сравнение — «как молоко»; эпитет — «проклятые»; метафора — «шапкой стоит»; олицетворение — «месяц выбирается».'},
+{variant:'Вариант 1',num:'№5',type:'matching',title:'Установите соответствие между героями рассказа и событиями их жизни.',left:['А) Жилин','Б) Костылин','В) Дина','Г) Абдул-Мурат'],right:['1) помогла пленнику выбраться из ямы','2) требовал выкуп за пленников','3) лепил кукол из глины','4) отставал во время побега'],answer:['3','4','1','2'],hint:'Жилин лепил кукол; Костылин отставал; Дина помогла выбраться; Абдул-Мурат требовал выкуп.'},
+{variant:'Вариант 1',num:'№6',type:'multi',title:'Выберите два верных утверждения, характеризующие рассказ Л. Н. Толстого «Кавказский пленник».',options:['Главным героем рассказа является Костылин.','Жилин написал письмо так, чтобы оно не дошло.','Дина помогла Жилину выбраться из ямы.','Костылин во время побега шёл быстро и не отставал.','Жилин сразу отказался от мысли о побеге.'],answer:[2,3],hint:'Верные утверждения: 2 и 3.'}
+],
+v2:[
+{variant:'Вариант 2',num:'№3',type:'single',title:'Прочитайте фрагмент рассказа Л. Н. Толстого «Кавказский пленник» и выполните задание.',fragment:`Принёс работник колодку: два чурбака дубовых на железные кольца насажены, и в одном кольце пробойчик и замок.
+
+Развязали Жилину руки, надели колодку и повели в сарай.`,question:'Опираясь на текст, выберите из приведённого списка значение слова «колодка».',options:['деревянное приспособление, ограничивающее движение пленника','небольшая скамейка у входа в дом','часть седла для верховой езды','деревянная посуда для воды'],answer:[1],hint:'Колодка — деревянное приспособление, ограничивающее движение пленника.'},
+{variant:'Вариант 2',num:'№4',type:'matching',title:'Установите соответствие между примерами из рассказа и названиями средств художественной выразительности.',left:['А) «пол земляной, чистый, <strong>как ток</strong>»','Б) «<strong>синий шёлковый</strong> бешмет»','В) «долина… как в огне <strong>загорелась от заката</strong>»','Г) «ручьи <strong>бегут</strong>»'],right:['1) эпитет','2) метафора','3) сравнение','4) олицетворение'],answer:['3','1','2','4'],hint:'«Как ток» — сравнение; «синий шёлковый» — эпитет; «загорелась от заката» — метафора; «ручьи бегут» — олицетворение.'},
+{variant:'Вариант 2',num:'№5',type:'matching',title:'Установите соответствие между героями рассказа и событиями их жизни.',left:['А) Жилин','Б) Костылин','В) Дина','Г) мать Жилина'],right:['1) прислала письмо с просьбой приехать домой','2) приносила пленнику еду','3) написал письмо так, чтобы оно не дошло','4) написал письмо домой и стал ждать выкуп'],answer:['3','4','2','1'],hint:'Жилин написал письмо так, чтобы оно не дошло; Костылин ждал выкуп; Дина приносила еду; мать Жилина звала сына домой.'},
+{variant:'Вариант 2',num:'№6',type:'multi',title:'Выберите два верных утверждения, характеризующие рассказ Л. Н. Толстого «Кавказский пленник».',options:['Жилин сделал для Дины куклу.','Костылин помог Жилину отбиться от татар во время нападения.','Дина выдала Жилина татарам.','Костылина выкупили через месяц.','Жилин после побега остался жить в ауле.'],answer:[1,4],hint:'Верные утверждения: 1 и 4.'}
+],
+v3:[
+{variant:'Вариант 3',num:'№3',type:'single',title:'Прочитайте фрагмент рассказа Л. Н. Толстого «Кавказский пленник» и выполните задание.',fragment:'Видна ему из щёлки дорога — под гору идёт, направо сакля татарская, два дерева подле ней.',question:'Опираясь на текст, выберите из приведённого списка значение слова «сакля».',options:['горная тропинка','жилище кавказских горцев','оружие татарина','место для содержания пленников'],answer:[2],hint:'Сакля — жилище кавказских горцев.'},
+{variant:'Вариант 3',num:'№4',type:'matching',title:'Установите соответствие между примерами из рассказа и названиями средств художественной выразительности.',left:['А) «смотрит на Жилина… <strong>как на зверя какого</strong>»','Б) «<strong>здоровенную</strong> <strong>татарскую</strong> спину»','В) «весь <strong>на пружинах</strong>»','Г) «<strong>туман</strong>… гуще <strong>сел</strong>»'],right:['1) метафора','2) олицетворение','3) сравнение','4) эпитет'],answer:['3','4','1','2'],hint:'«Как на зверя» — сравнение; «здоровенную татарскую» — эпитет; «на пружинах» — метафора; «туман сел» — олицетворение.'},
+{variant:'Вариант 3',num:'№5',type:'matching',title:'Установите соответствие между героями рассказа и событиями их жизни.',left:['А) Жилин','Б) Костылин','В) Дина','Г) старик'],right:['1) предупредила пленника, что его хотят убить','2) предложил Жилину идти одному','3) говорил, что пленников надо убить','4) не бросил товарища во время побега'],answer:['4','2','1','3'],hint:'Жилин не бросил товарища; Костылин предложил Жилину идти одному; Дина предупредила; старик говорил, что пленников надо убить.'},
+{variant:'Вариант 3',num:'№6',type:'multi',title:'Выберите два верных утверждения, характеризующие рассказ Л. Н. Толстого «Кавказский пленник».',options:['Во время первого побега Жилин бросил Костылина в лесу.','После неудачного побега Жилина и Костылина спустили в яму.','Костылин сразу согласился на второй побег из ямы.','Дина принесла Жилину длинный шест.','После побега Жилин остался жить в ауле.'],answer:[2,4],hint:'Верные утверждения: 2 и 4.'}
+]
+};
+
+let mode='v1',tasks=[],index=0,score=0,mistakes=0,locked=false;
+const start=document.getElementById('start'),game=document.getElementById('game'),finish=document.getElementById('finish'),progress=document.getElementById('progress'),num=document.getElementById('num'),total=document.getElementById('total'),scoreEl=document.getElementById('score'),mistakesEl=document.getElementById('mistakes'),tag=document.getElementById('tag'),question=document.getElementById('question'),fragment=document.getElementById('fragment'),area=document.getElementById('area'),check=document.getElementById('check'),next=document.getElementById('next'),feedback=document.getElementById('feedback'),hint=document.getElementById('hint'),result=document.getElementById('result');
+function setMode(m,el){mode=m;document.querySelectorAll('.mode').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function build(){if(mode==='all'||mode==='hard')return[...variants.v1,...variants.v2,...variants.v3];if(mode==='shuffle')return shuffle([...variants.v1,...variants.v2,...variants.v3]);return[...variants[mode]]}
+function startGame(){tasks=build();index=0;score=0;mistakes=0;start.classList.add('hidden');finish.classList.add('hidden');game.classList.remove('hidden');render()}
+function render(){locked=false;let t=tasks[index];tag.textContent=`${t.variant} • ${t.num}`;question.textContent=t.title;total.textContent=tasks.length;num.textContent=index+1;scoreEl.textContent=score;mistakesEl.textContent=mistakes;progress.style.width=`${Math.round(index/tasks.length*100)}%`;feedback.className='feedback hidden';hint.className='hint hidden';check.classList.remove('hidden');next.classList.add('hidden');if(t.fragment){fragment.textContent=t.fragment;fragment.classList.remove('hidden')}else fragment.classList.add('hidden');if(t.type==='single')renderSingle(t);if(t.type==='multi')renderMulti(t);if(t.type==='matching')renderMatching(t)}
+function renderSingle(t){area.innerHTML=`<p class="q">${t.question}</p><div class="options">${t.options.map((o,i)=>`<label class="option"><input type="radio" name="single" value="${i+1}"><span>${i+1}. ${o}</span></label>`).join('')}</div>`}
+function renderMulti(t){question.textContent='';area.innerHTML=`<p class="q">${t.title}</p><div class="options">${t.options.map((o,i)=>`<label class="option"><input type="checkbox" name="multi" value="${i+1}"><span>${i+1}. ${o}</span></label>`).join('')}</div><p class="small">Выбери ровно два утверждения.</p>`}
+function renderMatching(t){area.innerHTML=`<div class="tablewrap"><table class="mcko"><tr><th>Примеры</th><th>Средства художественной выразительности / события</th></tr>${t.left.map((l,i)=>`<tr><td class="left">${l}</td><td class="right">${t.right[i]||''}</td></tr>`).join('')}</table></div><div class="answergrid"><div class="answergrid-title">Ответ:</div><div class="letters">${['А','Б','В','Г'].map((L,i)=>`<div class="letter"><label>${L}</label><select><option value="">—</option>${t.right.map(r=>`<option value="${r[0]}">${r[0]}</option>`).join('')}</select></div>`).join('')}</div></div>`}
+function arrEq(a,b){if(a.length!==b.length)return false;for(let i=0;i<a.length;i++)if(String(a[i])!==String(b[i]))return false;return true}
+function checkAnswer(){if(locked)return;let t=tasks[index],u=[],complete=true;if(t.type==='single'){let c=document.querySelector('input[name="single"]:checked');if(!c)complete=false;else u=[Number(c.value)]}if(t.type==='multi'){u=[...document.querySelectorAll('input[name="multi"]:checked')].map(x=>Number(x.value)).sort((a,b)=>a-b);if(u.length!==2)complete=false}if(t.type==='matching'){u=[...document.querySelectorAll('select')].map(s=>s.value);if(u.some(x=>!x))complete=false}if(!complete){feedback.className='feedback error';feedback.textContent=t.type==='multi'?'Нужно выбрать ровно два ответа.':'Заполни ответ полностью.';return}let correct=t.type==='multi'?arrEq(u,[...t.answer].sort((a,b)=>a-b)):arrEq(u,t.answer);if(correct){score++;scoreEl.textContent=score;feedback.className='feedback ok';feedback.textContent='Молодец, всё правильно!';document.querySelectorAll('input,select').forEach(x=>x.disabled=true);locked=true;check.classList.add('hidden');next.classList.remove('hidden')}else{mistakes++;mistakesEl.textContent=mistakes;feedback.className='feedback error';feedback.textContent='Допущена ошибка. Проверь ответ ещё раз.';if(mode!=='hard'){hint.className='hint';hint.textContent=t.hint}}}
+function nextQuestion(){index++;if(index>=tasks.length)finishGame();else render()}
+function finishGame(){game.classList.add('hidden');finish.classList.remove('hidden');progress.style.width='100%';let pct=Math.round(score/tasks.length*100),phrase=pct===100?'Идеально! Все задания выполнены без ошибок.':pct>=80?'Очень хороший результат. Осталось чуть-чуть закрепить.':pct>=60?'Нормально, но стоит пройти ещё раз и разобрать ошибки.':'Пока сложновато. Лучше повторить содержание рассказа и пройти тренажёр ещё раз.';result.textContent=`${phrase} Баллы: ${score} из ${tasks.length}. Ошибки при попытках: ${mistakes}. Результат: ${pct}%.`}
+function goStart(){game.classList.add('hidden');finish.classList.add('hidden');start.classList.remove('hidden')}
+</script>
+</body>
+</html>
